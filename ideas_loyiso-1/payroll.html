@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll Overview</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2 class="logo">MobiTech Database</h2>
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="payroll.html" class="active">Payroll</a>
+            <a href="timeoff.html">Time Off</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+
+        <header class="topbar">
+            <input type="text" id="searchPayroll" placeholder="Search employee payroll...">
+            <div class="profile">HR Admin</div>
+        </header>
+
+        <h1>Payroll Records</h1>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Employee</th>
+                        <th>Hours Worked</th>
+                        <th>Leave Deductions (hrs)</th>
+                        <th>Final Salary</th>
+                    </tr>
+                </thead>
+                <tbody id="payrollTable">
+                    <!-- JS Inserts Rows -->
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+</div>
+
+<script src="payroll.js"></script>
+</body>
+</html>

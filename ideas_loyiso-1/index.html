@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2 class="logo">MobiTech Database</h2>
+        <nav>
+            <a href="index.html" class="active">Dashboard</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="payroll.html">Payroll</a>
+            <a href="timeoff.html">Time Off</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="content">
+        <header class="topbar">
+            <input type="text" id="search" placeholder="Search employee...">
+            <div class="profile">HR Admin</div>
+        </header>
+
+        <h1>Employee Management</h1>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Department</th>
+                        <th>Salary</th>
+                        <th>Contact</th>
+                    </tr>
+                </thead>
+                <tbody id="employeeTable">
+                    <!-- Filled by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

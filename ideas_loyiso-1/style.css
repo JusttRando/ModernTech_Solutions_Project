@@ -1,0 +1,162 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #f4f6f9;
+    color: #333;
+}
+
+.layout {
+    display: flex;
+}
+
+.sidebar {
+    width: 230px;
+    background: white;
+    padding: 20px;
+    height: 100vh;
+    box-shadow: 3px 0 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    margin-bottom: 30px;
+}
+
+.sidebar nav a {
+    display: block;
+    padding: 12px;
+    color: #555;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-bottom: 5px;
+}
+
+.sidebar nav a.active,
+.sidebar nav a:hover {
+    background: #eef3ff;
+    color: #2763ff;
+}
+
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+#search {
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.table-wrapper {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #f5f7fa;
+}
+
+th, td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+    background: #f9fbff;
+}
+
+.accordion-item {
+    background: white;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.accordion-header {
+    padding: 15px 20px;
+    background: #f7f9fc;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-header:hover {
+    background: #eef3ff;
+}
+
+.accordion-body {
+    display: none;
+    padding: 20px;
+    background: white;
+}
+
+.accordion-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+}
+
+.accordion-body th, 
+.accordion-body td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.chevron {
+    transition: 0.3s;
+}
+
+.rotate {
+    transform: rotate(90deg);
+}
+
+#timeOffForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+#timeOffForm label {
+    grid-column: span 2;
+    font-weight: 600;
+}
+
+#timeOffForm input,
+#timeOffForm select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    width: 100%;
+}
+
+.submit-btn {
+    grid-column: span 2;
+    padding: 12px;
+    background: #2763ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #1e4dcc;
+}

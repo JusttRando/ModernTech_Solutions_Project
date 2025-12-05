@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Off Requests</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2 class="logo">MobiTech Database</h2>
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="payroll.html">Payroll</a>
+            <a href="timeoff.html" class="active">Time Off</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+
+        <header class="topbar">
+            <input type="text" id="searchRequests" placeholder="Search requests by name...">
+            <div class="profile">HR Admin</div>
+        </header>
+
+        <h1>Time Off Requests</h1>
+
+        <!-- Request Form -->
+        <div class="table-wrapper" style="margin-bottom: 25px;">
+            <h2>Submit Time Off Request</h2>
+
+            <form id="timeOffForm">
+                <label>Employee Name</label>
+                <select id="employeeName" required></select>
+
+                <label>Start Date</label>
+                <input type="date" id="startDate" required>
+
+                <label>End Date</label>
+                <input type="date" id="endDate" required>
+
+                <label>Reason</label>
+                <input type="text" id="reason" placeholder="Reason for leave" required>
+
+                <button type="submit" class="submit-btn">Submit Request</button>
+            </form>
+        </div>
+
+        <!-- Requests Table -->
+        <div class="table-wrapper">
+            <h2>Submitted Requests</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Employee</th>
+                        <th>Start</th>
+                        <th>End</th>
+                        <th>Reason</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="requestsTable">
+                    <!-- JS inserts rows -->
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+</div>
+
+<script src="timeoff.js"></script>
+</body>
+</html>

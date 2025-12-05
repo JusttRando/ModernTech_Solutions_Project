@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance & Leave</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2 class="logo">MobiTech Database</h2>
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="attendance.html" class="active">Attendance</a>
+            <a href="payroll.html">Payroll</a>
+            <a href="timeoff.html">Time Off</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+
+        <header class="topbar">
+            <input type="text" id="searchAttendance" placeholder="Search employee...">
+            <div class="profile">HR Admin</div>
+        </header>
+
+        <h1>Attendance & Leave Records</h1>
+
+        <div id="accordionContainer"></div>
+
+    </main>
+</div>
+
+<script src="attendance.js"></script>
+
+</body>
+</html>
