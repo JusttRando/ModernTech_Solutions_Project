@@ -14,7 +14,6 @@ Promise.all([
                 <td>${emp ? emp.name : "Unknown Employee"}</td>
                 <td>${pay.hoursWorked}</td>
                 <td>${pay.leaveDeductions}</td>
-                <td>R ${pay.finalSalary.toLocaleString()}</td>
             </tr>
         `;
 

@@ -12,24 +12,28 @@
 
     <!-- Sidebar -->
     <aside class="sidebar">
-        <h2 class="logo">MobiTech Database</h2>
+        <div class="logo"><img id="logoImg" src="ModernTech_Solutions_Logo.png" alt=""></div>
+        
         <nav>
-            <a href="employee.html" class="active">Dashboard</a>
-            <a href="attendance.html">Attendance</a>
-            <a href="payroll.html">Payroll</a>
-            <a href="timeoff.html">Time Off</a>
-            <a href="profile.html">Profile</a>
+            <a href="employee.html" class="active">📃 Dashboard</a>
+            <a href="attendance.html">👥 Attendance</a>
+            <a href="payroll.html">💵 Payroll</a>
+            <a href="timeoff.html">🕑 Time Off</a>
+            <a href="profile.html">👤 Profile</a>
         </nav>
     </aside>
 
     <!-- Main content -->
     <main class="content">
         <header class="topbar">
-            <input type="text" id="search" placeholder="Search employee...">
-            <div class="profile">HR Admin</div>
+            <div><button id="state" onclick="State()"><span id="icon">🌗</span></button>
+            <input type="text" id="search" class="search" placeholder="Search employee...">
+            </div>
+            
+            <div class="profile">Overview</div>
         </header>
-
-        <h1>Employee Management</h1>
+        <div class="line"></div>
+        <h2>Employee Data</h2>
 
         <div class="table-wrapper">
             <table>
