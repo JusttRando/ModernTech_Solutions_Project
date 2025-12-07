@@ -33,18 +33,23 @@
             <div class="profile">Overview</div>
         </header>
         <div class="line"></div>
-        <h2>Employee Data</h2>
+        <div style="display:flex; align-items:center; gap:15px;">
+            <h2>Employee Data</h2>
+            <div id="sortStatus">
+                Sorting: None
+            </div>
+        </div>      
 
         <div class="table-wrapper">
             <table>
                 <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Department</th>
-                        <th>Salary</th>
-                        <th>Contact</th>
-                    </tr>
+                <tr>
+                    <th data-sort="name">Name ⬍</th>
+                    <th data-sort="position">Position ⬍</th>
+                    <th data-sort="department">Department ⬍</th>
+                    <th data-sort="salary">Salary ⬍</th>
+                    <th>Contact</th>
+                </tr>
                 </thead>
                 <tbody id="employeeTable">
                     <!-- Filled by JavaScript -->

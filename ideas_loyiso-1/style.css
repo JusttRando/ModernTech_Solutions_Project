@@ -199,3 +199,14 @@ tr:hover {
 .rotate {
   transform: rotate(180deg);
 }
+
+#sortStatus
+{
+    padding:8px 14px;
+    background:#eef3ff;
+    border-radius:6px;
+    font-size:14px;
+    color:#2763ff;
+    font-weight:600;
+    display:inline-block;
+}

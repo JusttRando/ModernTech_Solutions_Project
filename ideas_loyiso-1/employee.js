@@ -70,3 +70,78 @@ function State()
 
     }
 }
+
+// SORT STATUS BOX
+const sortStatusBox = document.getElementById("sortStatus");
+
+// SORTING FUNCTION
+const table = document.getElementById("employeeTable");
+let currentSort = { column: "", order: "asc" };
+
+document.querySelectorAll("th[data-sort]").forEach(header => {
+    header.style.cursor = "pointer";
+
+    header.addEventListener("click", () => {
+        const column = header.dataset.sort;
+
+        // Toggle ASC/DESC
+        if (currentSort.column === column) {
+            currentSort.order = currentSort.order === "asc" ? "desc" : "asc";
+        } else {
+            currentSort.column = column;
+            currentSort.order = "asc";
+        }
+
+        sortTable(column, currentSort.order);
+        updateSortStatus(column, currentSort.order);
+    });
+});
+
+// Main sort function
+function sortTable(column, order) {
+    let rows = Array.from(table.querySelectorAll("tr"));
+
+    rows.sort((a, b) => {
+        const cellA = a.children[getColumnIndex(column)].innerText;
+        const cellB = b.children[getColumnIndex(column)].innerText;
+
+        if (column === "salary") {
+            const numA = parseFloat(cellA.replace(/[R\s,]/g, ""));
+            const numB = parseFloat(cellB.replace(/[R\s,]/g, ""));
+            return order === "asc" ? numA - numB : numB - numA;
+        }
+
+        return order === "asc"
+            ? cellA.localeCompare(cellB)
+            : cellB.localeCompare(cellA);
+    });
+
+    rows.forEach(row => table.appendChild(row));
+}
+
+// Column index helper
+function getColumnIndex(column) {
+    switch (column) {
+        case "name": return 0;
+        case "position": return 1;
+        case "department": return 2;
+        case "salary": return 3;
+    }
+}
+
+function updateSortStatus(column, order) {
+
+    const labels = {
+        name: "Name",
+        position: "Position",
+        department: "Department",
+        salary: "Salary"
+    };
+
+    const emoji = {
+        asc: column === "salary" ? "🔼" : "🅰️",
+        desc: column === "salary" ? "🔽" : "ℹ️"
+    };
+
+    sortStatusBox.textContent = `Sorting: ${labels[column]} ${emoji[order]}`;
+}

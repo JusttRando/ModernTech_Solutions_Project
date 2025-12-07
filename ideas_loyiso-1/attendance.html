@@ -31,7 +31,25 @@
         </header>
 
         <div class="line"></div>
-        <h2>Attendance & Leave</h2>
+        <div style="display:flex; align-items:center; gap:15px;">
+            <h2>Attendance & Leave Records</h2>
+
+            <button id="showAttendanceBtn" 
+                style="padding:8px 12px;border-radius:6px;border:1px solid #ccc;cursor:pointer;">
+                Attendance Only
+            </button>
+
+            <button id="showLeaveBtn" 
+                style="padding:8px 12px;border-radius:6px;border:1px solid #ccc;cursor:pointer;">
+                Leave Only
+            </button>
+
+            <button id="showBothBtn" 
+                style="padding:8px 12px;border-radius:6px;border:1px solid #ccc;cursor:pointer;">
+                Show Both
+            </button>
+        </div>
+
 
         <div id="accordionContainer"></div>
 

@@ -2,24 +2,73 @@
 Promise.all([
     fetch("employee_info.json").then(res => res.json()),
     fetch("payroll_data.json").then(res => res.json())
-]).then(([employees, payroll]) => {
+]).then(([employeesData, payrollData]) => {
 
+    const employees = employeesData.employeeInformation;
+    const payroll = payrollData.payrollData;
     const payrollTable = document.getElementById("payrollTable");
 
-    payroll.payrollData.forEach(pay => {
-        const emp = employees.employeeInformation.find(e => e.employeeId === pay.employeeId);
+    // Assume an hourly rate calculation
+    const HOURLY_RATE = 450; // you can adjust this value
 
-        const row = `
+    payroll.forEach(p => {
+        const emp = employees.find(e => e.employeeId === p.employeeId);
+
+        // Automated salary calculation
+        const gross = p.hoursWorked * HOURLY_RATE;
+        const leavePenalty = p.leaveDeductions * HOURLY_RATE;
+        const finalSalary = gross - leavePenalty;
+
+        // Add row
+        payrollTable.innerHTML += `
             <tr>
-                <td>${emp ? emp.name : "Unknown Employee"}</td>
-                <td>${pay.hoursWorked}</td>
-                <td>${pay.leaveDeductions}</td>
+                <td>${emp.name}</td>
+                <td>${p.hoursWorked}</td>
+                <td>${p.leaveDeductions}</td>
+                <td>R ${finalSalary.toLocaleString()}</td>
+                <td>
+                    <button onclick="generatePayslip('${emp.name}', '${emp.position}', '${p.hoursWorked}', '${p.leaveDeductions}', '${HOURLY_RATE}', '${finalSalary}')"
+                        style="padding:6px 10px;border:none;background:#2763ff;color:white;border-radius:6px;cursor:pointer;">
+                        Payslip
+                    </button>
+                </td>
             </tr>
         `;
-
-        payrollTable.innerHTML += row;
     });
+
 });
+
+
+// --- Payslip Generator ---
+window.generatePayslip = function(name, position, hours, deductions, rate, finalSalary) {
+
+    const gross = hours * rate;
+    const leaveCost = deductions * rate;
+
+    document.getElementById("payslipContent").innerHTML = `
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Position:</strong> ${position}</p>
+
+        <hr>
+
+        <p><strong>Hourly Rate:</strong> R ${rate.toLocaleString()}</p>
+        <p><strong>Hours Worked:</strong> ${hours}</p>
+        <p><strong>Leave Deductions:</strong> ${deductions} hrs</p>
+
+        <hr>
+
+        <p><strong>Gross Salary:</strong> R ${gross.toLocaleString()}</p>
+        <p><strong>Leave Deduction Cost:</strong> - R ${leaveCost.toLocaleString()}</p>
+
+        <h3>Final Salary: R ${Number(finalSalary).toLocaleString()}</h3>
+    `;
+
+    document.getElementById("payslipModal").style.display = "flex";
+};
+
+window.closePayslip = function() {
+    document.getElementById("payslipModal").style.display = "none";
+};
 
 
 // Search Filter
