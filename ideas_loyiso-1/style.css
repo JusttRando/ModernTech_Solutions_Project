@@ -14,7 +14,8 @@ body {
     display: flex;
 }
 
-.sidebar {
+.sidebar 
+{
     width: 230px;
     background: white;
     padding: 20px;
@@ -28,6 +29,12 @@ body {
         margin-right: 10px;
         font-size: 18px;
     }
+
+    .collapsed
+    {
+        width: 50px;
+    }
+
 }
 
 .logo img{

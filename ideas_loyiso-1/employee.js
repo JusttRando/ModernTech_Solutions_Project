@@ -52,6 +52,7 @@ function State()
         leave.innerText = ""
         profile.innerText = ""
         sidebar.style.width = "50px"
+        sidebar.classList.toggle("collapsed")
         icon.classList.toggle("rotate")
         button.style.backgroundColor = "cadetblue"
     }
