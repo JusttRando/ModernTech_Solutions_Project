@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance & Leave</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo"><img src="ModernTech_Solutions_Logo.png" alt=""></div>
+        <nav>
+            <a href="employee.html">Dashboard</a>
+            <a href="attendance.html" class="active">Attendance</a>
+            <a href="payroll.html">Payroll</a>
+            <a href="timeoff.html">Time Off</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+
+        <header class="topbar">
+            <input type="text" id="searchAttendance" class="search" placeholder="Search employee...">
+            <div class="profile">Overview</div>
+        </header>
+
+        <div class="line"></div>
+        <div style="display:flex; align-items:center; gap:15px;">
+            <h2>Attendance & Leave Records</h2>
+
+            <button id="showAttendanceBtn" 
+                style="padding:8px 12px;border-radius:6px;border:1px solid #ccc;cursor:pointer;">
+                Attendance Only
+            </button>
+
+            <button id="showLeaveBtn" 
+                style="padding:8px 12px;border-radius:6px;border:1px solid #ccc;cursor:pointer;">
+                Leave Only
+            </button>
+
+            <button id="showBothBtn" 
+                style="padding:8px 12px;border-radius:6px;border:1px solid #ccc;cursor:pointer;">
+                Show Both
+            </button>
+        </div>
+
+
+        <div id="accordionContainer"></div>
+
+    </main>
+</div>
+
+<script src="attendance.js"></script>
+
+</body>
+</html>

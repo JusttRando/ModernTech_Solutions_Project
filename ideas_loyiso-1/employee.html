@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo"><img id="logoImg" src="ModernTech_Solutions_Logo.png" alt=""></div>
+        
+        <nav>
+            <a href="employee.html" class="active">📃 Dashboard</a>
+            <a href="attendance.html">👥 Attendance</a>
+            <a href="payroll.html">💵 Payroll</a>
+            <a href="timeoff.html">🕑 Time Off</a>
+            <a href="profile.html">👤 Profile</a>
+        </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="content">
+        <header class="topbar">
+            <div><button id="state" onclick="State()"><span id="icon">🌗</span></button>
+            <input type="text" id="search" class="search" placeholder="Search employee...">
+            </div>
+            
+            <div class="profile">Overview</div>
+        </header>
+        <div class="line"></div>
+        <div style="display:flex; align-items:center; gap:15px;">
+            <h2>Employee Data</h2>
+            <div id="sortStatus">
+                Sorting: None
+            </div>
+        </div>      
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th data-sort="name">Name ⬍</th>
+                    <th data-sort="position">Position ⬍</th>
+                    <th data-sort="department">Department ⬍</th>
+                    <th data-sort="salary">Salary ⬍</th>
+                    <th>Contact</th>
+                </tr>
+                </thead>
+                <tbody id="employeeTable">
+                    <!-- Filled by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+</div>
+
+<script src="employee.js"></script>
+</body>
+</html>
