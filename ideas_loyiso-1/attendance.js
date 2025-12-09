@@ -122,4 +122,4 @@ function State()
         sidebar.classList.remove("collapsed")  
         icon.classList.toggle("rotate")
     }
-}
+}   

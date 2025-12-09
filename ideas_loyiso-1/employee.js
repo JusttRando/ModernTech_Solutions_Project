@@ -37,8 +37,6 @@ function State() {
     sidebar.classList.toggle("collapsed");
     icon.classList.toggle("rotate");
 
-<<<<<<< HEAD
-=======
     if (currentWidth === "230px")
     {
         logo.src = "ModernTech_Solutions_Logo-s.png"
@@ -66,7 +64,6 @@ function State() {
         button.style.backgroundColor = "wheat"
 
     }
->>>>>>> 4aa3dd703de26213e91ece8b55901f7158eec610
 }
 // SORTING FUNCTION
 const table = document.getElementById("employeeTable");
