@@ -88,4 +88,11 @@ function State() {
 
     sidebar.classList.toggle("collapsed");
     icon.classList.toggle("rotate");
+
+    // Swap logo for smaller one only when collapsed AND on desktop
+    if (window.innerWidth > 900) {
+        logo.src = sidebar.classList.contains("collapsed")
+            ? "ModernTech_Solutions_Logo-s.png"
+            : "ModernTech_Solutions_Logo.png";
+    }
 }
