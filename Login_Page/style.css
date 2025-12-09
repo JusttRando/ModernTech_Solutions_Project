@@ -40,7 +40,7 @@ body {
 
 /* Hero Section */
 .Hero {
-    background:  #ffffff;
+    background-image: url('https://plus.unsplash.com/premium_photo-1668473366952-45f06fbf6492?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     height: 60vh;
     display: flex;
     justify-content: center;
@@ -52,16 +52,18 @@ body {
 .Hero h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: rgb(0, 0, 0);
 }
 
 .Hero  p {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
+    color: rgb(0, 0, 0);
 }
 
 .btn-primary {
     padding: 0.8rem 1.5rem;
-    background-color: #ff9800;
+    background-color: cornflowerblue;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -73,7 +75,7 @@ body {
     background-color: #e68a00;
 }
 
-/* Content / Services */
+/* Content*/
 .Content {
     padding: 3rem 2rem;
     text-align: center;
