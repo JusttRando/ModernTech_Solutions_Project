@@ -32,11 +32,17 @@ body {
     text-decoration: none;
     font-weight: 500;
     transition: 0.3s;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(3px);
 }
 
 .Nav nav a:hover {
-    text-decoration: underline;
+    background: white;
+    color: cornflowerblue;
 }
+
 
 /* Hero Section */
 .Hero {
@@ -114,7 +120,7 @@ body {
 }
 
 .Footer {
-    background: #1a1a1a;
+    background: cornflowerblue;
     color: white;
     text-align: center;
     padding: 20px 15px;
@@ -141,4 +147,76 @@ body {
     display: flex;
     align-items: center;
     gap: 11px;
+}
+
+
+#About {
+
+  transform: translateY(-100px); /* Start slightly above its final position */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Smooth transition */
+}
+
+/* State when the animation is active */
+#About.slide-in {
+  opacity: 71;
+  transform: translateY(0); /* Slide down to its final position */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===========================
+   MOBILE RESPONSIVE DESIGN
+   =========================== */
+@media (max-width: 768px) {
+
+    /* Header */
+    .Nav {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+        gap: 12px;
+    }
+
+    .Nav nav {
+        display: flex;
+        gap: 12px;
+    }
+
+    .Nav nav a {
+        padding: 8px 14px;
+        font-size: 14px;
+        margin: 0;
+    }
+
+    /* Hero Section */
+    .Hero {
+        height: 45vh;
+        padding: 15px;
+    }
+
+    .Hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .Hero p {
+        font-size: 1rem;
+    }
+
+    /* Services cards */
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 90%;
+    }
+
+    /* Footer */
+    .Footer {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
 }
