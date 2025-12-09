@@ -67,3 +67,14 @@ document.getElementById("searchRequests").addEventListener("keyup", function () 
         row.style.display = row.innerText.toLowerCase().includes(filter) ? "" : "none";
     });
 });
+
+// Sidenav Slide
+function State() {
+    const icon = document.getElementById("icon");
+    const logo = document.getElementById("logoImg");
+    const sidebar = document.querySelector(".sidebar");
+
+    sidebar.classList.toggle("collapsed");
+    icon.classList.toggle("rotate");
+
+}

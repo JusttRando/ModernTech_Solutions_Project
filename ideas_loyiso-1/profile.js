@@ -163,3 +163,14 @@ Promise.all([
   console.error("Failed to load profile data", err);
   document.getElementById("profileContainer").innerHTML = "<p>Error loading data — check console.</p>";
 });
+
+// Sidenav Slide
+function State() {
+    const icon = document.getElementById("icon");
+    const logo = document.getElementById("logoImg");
+    const sidebar = document.querySelector(".sidebar");
+
+    sidebar.classList.toggle("collapsed");
+    icon.classList.toggle("rotate");
+
+}

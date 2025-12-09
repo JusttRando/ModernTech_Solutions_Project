@@ -100,3 +100,26 @@ document.getElementById("showBothBtn").addEventListener("click", () => {
     document.querySelectorAll(".attendance-section").forEach(sec => sec.style.display = "block");
     document.querySelectorAll(".leave-section").forEach(sec => sec.style.display = "block");
 });
+
+// Sidenav Slide
+function State()
+{
+    const icon = document.getElementById("icon");
+    const logo = document.getElementById("logoImg");
+    const sidebar = document.querySelector(".sidebar");
+
+    const currentWidth = getComputedStyle(sidebar).width;
+
+    if (currentWidth === "230px")
+    {
+        logo.src = "ModernTech_Solutions_Logo-s.png"
+        sidebar.classList.toggle("collapsed")
+        icon.classList.toggle("rotate")
+    }
+    else
+    {
+        logo.src = "ModernTech_Solutions_Logo.png"
+        sidebar.classList.remove("collapsed")  
+        icon.classList.toggle("rotate")
+    }
+}

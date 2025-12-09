@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time Off Requests</title>
+    <title>Modern Manager</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="ModernTech_Solutions_Logo-S.png">
 </head>
 <body>
 
@@ -13,22 +14,25 @@
     <!-- Sidebar -->
     <aside class="sidebar">
         <div class="logo"><img id="logoImg" src="ModernTech_Solutions_Logo.png" alt=""></div>
+        
         <nav>
-            <a href="employee.html">Dashboard</a>
-            <a href="attendance.html">Attendance</a>
-            <a href="payroll.html">Payroll</a>
-            <a href="timeoff.html" class="active">Time Off</a>
-            <a href="profile.html">Profile</a>
+            <a href="employee.html" data-icon="📃">Dashboard</a>
+            <a href="attendance.html" data-icon="👥">Attendance</a>
+            <a href="payroll.html" data-icon="💵"> Payroll</a>
+            <a href="timeoff.html" class="active" data-icon="🕑"> Time Off</a>
+            <a href="profile.html" data-icon="👤">Profile</a>
         </nav>
     </aside>
 
     <!-- Main Content -->
     <main class="content">
-
-        <header class="topbar">
-            <input type="text" class="search" id="searchRequests" placeholder="Search requests by name...">
-            <div class="profile">Overview</div>
-        </header>
+            <header class="topbar">
+                <div><button id="state" onclick="State()"><span id="icon">🌗</span></button>
+                <input type="text" id="search" class="search" placeholder="Search employee...">
+                </div>
+                
+                <div class="profile">Overview</div>
+            </header>
 
         <div class="line"></div>
         <h2>Leave Forms</h2>

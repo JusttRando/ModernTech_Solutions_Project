@@ -25,7 +25,6 @@ Promise.all([
                 <td>${emp.name}</td>
                 <td>${p.hoursWorked}</td>
                 <td>${p.leaveDeductions}</td>
-                <td>R ${finalSalary.toLocaleString()}</td>
                 <td>
                     <button onclick="generatePayslip('${emp.name}', '${emp.position}', '${p.hoursWorked}', '${p.leaveDeductions}', '${HOURLY_RATE}', '${finalSalary}')"
                         style="padding:6px 10px;border:none;background:#2763ff;color:white;border-radius:6px;cursor:pointer;">
@@ -80,3 +79,13 @@ document.getElementById("searchPayroll").addEventListener("keyup", function () {
         row.style.display = row.innerText.toLowerCase().includes(filter) ? "" : "none";
     });
 });
+
+// Sidenav Slide
+function State() {
+    const icon = document.getElementById("icon");
+    const logo = document.getElementById("logoImg");
+    const sidebar = document.querySelector(".sidebar");
+
+    sidebar.classList.toggle("collapsed");
+    icon.classList.toggle("rotate");
+}

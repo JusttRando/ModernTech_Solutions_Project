@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Employee Profile</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Modern Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="ModernTech_Solutions_Logo-S.png">
   <style>
     /* small profile-specific overrides */
     .profile-card {
@@ -82,23 +83,27 @@
 <div class="layout">
 
   <!-- Sidebar -->
-  <aside class="sidebar">
-    <div class="logo"><img src="ModernTech_Solutions_Logo.png" alt=""></div>
-    <nav>
-      <a href="employee.html">Dashboard</a>
-      <a href="attendance.html">Attendance</a>
-      <a href="payroll.html">Payroll</a>
-      <a href="timeoff.html">Time Off</a>
-      <a href="#" class="active">Profile</a>
-    </nav>
-  </aside>
+    <aside class="sidebar">
+        <div class="logo"><img id="logoImg" src="ModernTech_Solutions_Logo.png" alt=""></div>
+        
+        <nav>
+            <a href="employee.html" data-icon="📃">Dashboard</a>
+            <a href="attendance.html" data-icon="👥">Attendance</a>
+            <a href="payroll.html" data-icon="💵"> Payroll</a>
+            <a href="timeoff.html" data-icon="🕑"> Time Off</a>
+            <a href="profile.html" class="active" data-icon="👤">Profile</a>
+        </nav>
+    </aside>
 
   <!-- Main -->
   <main class="content">
-    <header class="topbar">
-      <input id="searchProfile" class="search" type="text" placeholder="Filter names..." />
-      <div class="profile">HR Admin</div>
-    </header>
+          <header class="topbar">
+              <div><button id="state" onclick="State()"><span id="icon">🌗</span></button>
+              <input type="text" id="search" class="search" placeholder="Search employee...">
+              </div>
+              
+              <div class="profile">Overview</div>
+          </header>
 
     <div class="line"></div>
     <h1>Employee Profile</h1>
@@ -106,9 +111,6 @@
     <div class="select-row">
       <label for="employeeSelect"><strong>Select employee:</strong></label>
       <select id="employeeSelect"></select>
-      <button id="openTimeoff" style="padding:8px 10px;border-radius:8px;border:1px solid #ddd;background:#fff;cursor:pointer;">
-        View Time Off Page
-      </button>
     </div>
 
     <div id="profileContainer">

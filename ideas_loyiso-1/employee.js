@@ -13,7 +13,7 @@ fetch("employee_info.json")
                     <td>R ${emp.salary.toLocaleString()}</td>
                     <td>${emp.contact}</td>
                 </tr>
-            `;
+            `;``
             table.innerHTML += row;
         });
     });
@@ -28,53 +28,16 @@ document.getElementById("search").addEventListener("keyup", function () {
     });
 });
 
-function State()
-{
+// Sidenav Slide
+function State() {
     const icon = document.getElementById("icon");
     const logo = document.getElementById("logoImg");
-    const button = document.getElementById("state");
-    const sidebar = document.querySelector("aside");
-    const dash = document.querySelectorAll("nav a")[0];
-    const attain = document.querySelectorAll("nav a")[1];
-    const pay = document.querySelectorAll("nav a")[2];
-    const leave = document.querySelectorAll("nav a")[3];
-    const profile = document.querySelectorAll("nav a")[4];
+    const sidebar = document.querySelector(".sidebar");
 
-    const currentWidth = getComputedStyle(sidebar).width;
+    sidebar.classList.toggle("collapsed");
+    icon.classList.toggle("rotate");
 
-    if (currentWidth === "230px")
-    {
-        logo.src = "ModernTech_Solutions_Logo-s.png"
-        logo.style.width = "50px"
-        dash.innerText = ""
-        attain.innerText = ""
-        pay.innerText = ""
-        leave.innerText = ""
-        profile.innerText = ""
-        sidebar.style.width = "50px"
-        sidebar.classList.toggle("collapsed")
-        icon.classList.toggle("rotate")
-        button.style.backgroundColor = "cadetblue"
-    }
-    else
-    {
-        logo.src = "ModernTech_Solutions_Logo.png"
-        logo.style.width = "220px"
-        dash.innerText = "Dashboard"
-        attain.innerText = "Attendance"
-        pay.innerText = "Payroll"
-        leave.innerText = "Time Off"
-        profile.innerText = "Profile"
-        sidebar.style.width = "230px"
-        icon.classList.toggle("rotate")
-        button.style.backgroundColor = "wheat"
-
-    }
 }
-
-// SORT STATUS BOX
-const sortStatusBox = document.getElementById("sortStatus");
-
 // SORTING FUNCTION
 const table = document.getElementById("employeeTable");
 let currentSort = { column: "", order: "asc" };
@@ -94,11 +57,9 @@ document.querySelectorAll("th[data-sort]").forEach(header => {
         }
 
         sortTable(column, currentSort.order);
-        updateSortStatus(column, currentSort.order);
     });
 });
 
-// Main sort function
 function sortTable(column, order) {
     let rows = Array.from(table.querySelectorAll("tr"));
 
@@ -107,42 +68,28 @@ function sortTable(column, order) {
         const cellB = b.children[getColumnIndex(column)].innerText;
 
         if (column === "salary") {
+            // Remove currency formatting and convert to number
             const numA = parseFloat(cellA.replace(/[R\s,]/g, ""));
             const numB = parseFloat(cellB.replace(/[R\s,]/g, ""));
             return order === "asc" ? numA - numB : numB - numA;
         }
 
+        // alphabetic sort
         return order === "asc"
             ? cellA.localeCompare(cellB)
             : cellB.localeCompare(cellA);
     });
 
+    // Put rows back in the DOM
     rows.forEach(row => table.appendChild(row));
 }
 
-// Column index helper
 function getColumnIndex(column) {
     switch (column) {
         case "name": return 0;
         case "position": return 1;
         case "department": return 2;
         case "salary": return 3;
+        default: return 0;
     }
-}
-
-function updateSortStatus(column, order) {
-
-    const labels = {
-        name: "Name",
-        position: "Position",
-        department: "Department",
-        salary: "Salary"
-    };
-
-    const emoji = {
-        asc: column === "salary" ? "🔼" : "🅰️",
-        desc: column === "salary" ? "🔽" : "ℹ️"
-    };
-
-    sortStatusBox.textContent = `Sorting: ${labels[column]} ${emoji[order]}`;
 }
