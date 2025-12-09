@@ -3,9 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Modern Manager</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="ModernTech_Solutions_Logo-S.png">
+  <title>Employee Profile</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     /* small profile-specific overrides */
     .profile-card {
@@ -90,27 +89,30 @@
             <a href="employee.html" data-icon="📃">Dashboard</a>
             <a href="attendance.html" data-icon="👥">Attendance</a>
             <a href="payroll.html" data-icon="💵"> Payroll</a>
-            <a href="timeoff.html" data-icon="🕑"> Time Off</a>
-            <a href="profile.html" class="active" data-icon="👤">Profile</a>
+            <a href="timeoff.html" class="active" data-icon="🕑"> Time Off</a>
+            <a href="profile.html" data-icon="👤">Profile</a>
         </nav>
     </aside>
 
   <!-- Main -->
   <main class="content">
-          <header class="topbar">
-              <div><button id="state" onclick="State()"><span id="icon">🌗</span></button>
-              <input type="text" id="search" class="search" placeholder="Search employee...">
-              </div>
-              
-              <div class="profile">Overview</div>
-          </header>
+    <header class="topbar">
+      <div>
+      <button id="state" onclick="State()"><span id="icon">🌗</span></button>
+      <input id="searchProfile" type="text" class="search" placeholder="Filter names..." />
+      </div>
+      <div class="profile">Overview</div>
+    </header>
 
-    <div class="line"></div>
-    <h1>Employee Profile</h1>
+      <div class="line"></div>
+      <h2>Employee Profiles</h2>
 
     <div class="select-row">
       <label for="employeeSelect"><strong>Select employee:</strong></label>
       <select id="employeeSelect"></select>
+      <button id="openTimeoff" style="padding:8px 10px;border-radius:8px;border:1px solid #ddd;background:#fff;cursor:pointer;">
+        View Time Off Page
+      </button>
     </div>
 
     <div id="profileContainer">
