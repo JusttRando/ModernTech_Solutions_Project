@@ -14,8 +14,7 @@ body {
     display: flex;
 }
 
-.sidebar 
-{
+.sidebar {
     width: 230px;
     background: rgb(255, 255, 255);
     padding: 20px;
@@ -30,16 +29,11 @@ body {
         font-size: 18px;
     }
 
-
-}
-
-.sidebar.collapsed {
-    width: 50px;
-    font-size: 0 ;
-    img
+    .collapsed
     {
         width: 50px;
     }
+
 }
 
 .logo img{
@@ -58,7 +52,8 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-.sidebar nav a.active, .sidebar nav a:hover{
+.sidebar nav a.active,
+.sidebar nav a:hover {
     background: #eef3ff;
     color: #2763ff;
 }
@@ -230,63 +225,3 @@ tr:hover {
     display:inline-block;
 }
 
-/* --------------------------- */
-/* MOBILE SLIDE-UP SIDEBAR    */
-/* --------------------------- */
-
-@media (max-width: 900px) {
-
-    .layout {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        height: auto;
-        background: white;
-        padding: 15px;
-        transition: max-height 0.5s ease-in-out;
-        overflow: hidden;
-        max-height: 500px;  /* visible */
-    }
-
-    /* When collapsed → slide upwards */
-    .sidebar.collapsed {
-        max-height: 0;
-        padding: 0 15px;
-    }
-
-    .logo img {
-        width: 150px;
-        padding: 10px 0;
-    }
-
-    /* Links stay in column layout */
-    .sidebar nav {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .sidebar nav a {
-        padding: 12px;
-        font-size: 14px;
-        display: block;
-        text-align: left;
-    }
-
-    /* Search & top bar stack */
-    .topbar {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .search {
-        width: 100%;
-    }
-
-    /* Table scrolls on mobile (important) */
-    .table-wrapper {
-        overflow-x: auto;
-    }
-}

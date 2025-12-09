@@ -37,6 +37,36 @@ function State() {
     sidebar.classList.toggle("collapsed");
     icon.classList.toggle("rotate");
 
+<<<<<<< HEAD
+=======
+    if (currentWidth === "230px")
+    {
+        logo.src = "ModernTech_Solutions_Logo-s.png"
+        logo.style.width = "50px"
+        dash.innerText = "📃"
+        attain.innerText = "👥"
+        pay.innerText = "💵"
+        leave.innerText = "🕑"
+        profile.innerText = "👤"
+        sidebar.style.width = "50px"
+        icon.classList.toggle("rotate")
+        button.style.backgroundColor = "cadetblue"
+    }
+    else
+    {
+        logo.src = "ModernTech_Solutions_Logo.png"
+        logo.style.width = "220px"
+        dash.innerText = "📃 Dashboard"
+        attain.innerText = "👥 Attendance"
+        pay.innerText = "💵 Payroll"
+        leave.innerText = "🕑 Time Off"
+        profile.innerText = " 👤Profile"
+        sidebar.style.width = "230px"
+        icon.classList.toggle("rotate")
+        button.style.backgroundColor = "wheat"
+
+    }
+>>>>>>> 4aa3dd703de26213e91ece8b55901f7158eec610
 }
 // SORTING FUNCTION
 const table = document.getElementById("employeeTable");
