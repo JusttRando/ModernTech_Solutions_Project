@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="ModernTech_Solutions_Logo-S.png">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo toggle-btn"><img id="logoImg" src="ModernTech_Solutions_Logo.png" alt="" onclick="State()"></div>
+         
+        <nav>
+            <a href="employee.html">📃 Dashboard</a>
+            <a href="attendance.html">👥Attendance</a>
+            <a href="payroll.html" class="active">💵 Payroll</a>
+            <a href="timeoff.html">🕑 Time Off</a>
+            <a href="profile.html">👤 Profile</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+        <header class="topbar">
+            <div class="top-controls">
+            <button id="state" onclick="State()">◀️</button>
+            <input type="text" id="search" class="search" placeholder="Search employee...">
+            <a href="attendance.html" id="state">🏛️</a>
+            </div>
+        </header>
+
+        <div class="line"></div>
+        <h2>Payroll Estimator</h2>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Employee</th>
+                        <th>Hours Worked</th>
+                        <th>Leave Deductions (hrs)</th> 
+                        <th>Payslip</th>
+                    </tr>
+                </thead>
+                <tbody id="payrollTable"></tbody>
+            </table>
+        </div>
+
+        <!-- Payslip Modal -->
+        <div id="payslipModal" style="
+            display:none;
+            position:fixed;
+            top:0; left:0;
+            width:100%; height:100%;
+            background:rgba(0,0,0,0.5);
+            justify-content:center;
+            align-items:center;
+        ">
+            <div style="
+                background:white;
+                padding:25px;
+                width:380px;
+                border-radius:12px;
+                box-shadow:0 2px 10px rgba(0,0,0,0.3);
+            ">
+                <h2>Payslip</h2>
+                <div id="payslipContent"></div>
+
+                <button onclick="window.print()" 
+                    style="margin-top:15px;padding:10px 14px;border-radius:6px;border:none;background:#2763ff;color:white;cursor:pointer;">
+                    Print / Save as PDF
+                </button>
+
+                <button onclick="closePayslip()" 
+                    style="margin-top:10px;padding:10px 14px;border-radius:6px;border:1px solid #ccc;background:#fff;cursor:pointer;">
+                    Close
+                </button>
+            </div>
+        </div>
+
+
+    </main>
+
+</div>
+
+<script src="payroll.js"></script>
+</body>
+</html>

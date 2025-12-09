@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="ModernTech_Solutions_Logo-S.png">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo toggle-btn"><img id="logoImg" src="ModernTech_Solutions_Logo.png" alt="" onclick="State()"></div>
+         
+        <nav>
+            <a href="employee.html">📃 Dashboard</a>
+            <a href="attendance.html" class="active">👥Attendance</a>
+            <a href="payroll.html">💵 Payroll</a>
+            <a href="timeoff.html">🕑 Time Off</a>
+            <a href="profile.html">👤 Profile</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+        <header class="topbar">
+            <div class="top-controls">
+            <button id="state" onclick="State()">◀️</button>
+            <input type="text" id="search" class="search" placeholder="Search employee...">
+            <a href="attendance.html" id="state">🏛️</a>
+            </div>
+        </header>
+
+        <div class="line"></div>
+        <h2>Attendance & Leave Records</h2>
+
+
+        <div id="accordionContainer"></div>
+
+    </main>
+</div>
+
+<script src="attendance.js"></script>
+
+</body>
+</html>

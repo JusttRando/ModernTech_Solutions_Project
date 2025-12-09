@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Modern Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="ModernTech_Solutions_Logo-S.png">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo toggle-btn"><img id="logoImg" src="ModernTech_Solutions_Logo.png" alt="" onclick="State()"></div>
+         
+        <nav>
+            <a href="employee.html" >📃 Dashboard</a>
+            <a href="attendance.html">👥Attendance</a>
+            <a href="payroll.html">💵 Payroll</a>
+            <a href="timeoff.html">🕑 Time Off</a>
+            <a href="profile.html">👤 Profile</a>
+        </nav>
+    </aside>
+
+  <!-- Main -->
+  <main class="content">
+      <header class="topbar">
+            <div class="top-controls">
+            <button id="state" onclick="State()">◀️</button>
+            <input type="text" id="searchProfile" class="search" placeholder="Search employee...">
+            <a href="attendance.html" id="state">🏛️</a>
+            </div>
+      </header>
+
+      <div class="line"></div>
+      <h2>Employee Profiles</h2>
+
+    <div class="select-row">
+      <label for="employeeSelect"><strong>Select employee:</strong></label>
+      <select id="employeeSelect"></select>
+    </div>
+
+    <div id="profileContainer">
+      <!-- Profile card rendered here -->
+    </div>
+
+    <!-- Optional: quick attendance summary table -->
+    <div id="attendanceSummary"></div>
+
+  </main>
+</div>
+
+<script src="profile.js"></script>
+</body>
+</html>
