@@ -12,7 +12,7 @@ function loginUser(event) {
     return;
   }
 
-  if (user !== "AdminLoid") {
+  if (user !== "Admin") {
     error.textContent = "Username not found.";
     return;
   }
@@ -23,6 +23,5 @@ function loginUser(event) {
   }
 
   // Login success
-  alert("Login successful!");
-  window.location.href = "website.html"; 
+  window.location.href = "/ideas_loyiso-1/employee.html"; 
 }
