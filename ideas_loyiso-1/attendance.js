@@ -103,17 +103,6 @@ document.getElementById("showBothBtn").addEventListener("click", () => {
 
 // Sidenav Slide
 function State() {
-    const icon = document.getElementById("icon");
-    const logo = document.getElementById("logoImg");
     const sidebar = document.querySelector(".sidebar");
-
-    sidebar.classList.toggle("collapsed");
-    icon.classList.toggle("rotate");
-
-    // Swap logo for smaller one only when collapsed AND on desktop
-    if (window.innerWidth > 900) {
-        logo.src = sidebar.classList.contains("collapsed")
-            ? "ModernTech_Solutions_Logo-s.png"
-            : "ModernTech_Solutions_Logo.png";
-    }
+    sidebar.classList.toggle("hidden");
 }

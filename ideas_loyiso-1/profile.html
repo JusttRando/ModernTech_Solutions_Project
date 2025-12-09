@@ -3,79 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Employee Profile</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    /* small profile-specific overrides */
-    .profile-card {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-      padding: 22px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-      margin-bottom: 20px;
-    }
-
-    .avatar {
-      width: 96px;
-      height: 96px;
-      border-radius: 14px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:48px;
-      background: #f2f6ff;
-    }
-
-    .meta {
-      flex: 1;
-    }
-
-    .meta h2 { margin: 0 0 6px 0; }
-    .meta p { margin: 4px 0; color:#555; }
-
-    .small-stats {
-      display:flex;
-      gap:16px;
-      margin-top:12px;
-    }
-
-    .stat {
-      background:#fafbff;
-      padding:10px 14px;
-      border-radius:8px;
-      text-align:center;
-    }
-
-    .requests {
-      margin-top: 12px;
-    }
-
-    .requests h3 { margin: 0 0 8px 0; }
-    .requests ul { margin:0; padding-left: 18px; color:#333; }
-    .requests li { margin-bottom:6px; }
-
-    .select-row {
-      display:flex;
-      gap:12px;
-      align-items:center;
-      margin-bottom:16px;
-    }
-
-    .select-row select {
-      padding:8px 10px;
-      border-radius:8px;
-      border:1px solid #ddd;
-    }
-
-    .note {
-      font-size:13px;
-      color:#666;
-      margin-top:10px;
-    }
-  </style>
+  <title>Modern Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="ModernTech_Solutions_Logo-S.png">
 </head>
 <body>
 
@@ -83,26 +13,26 @@
 
   <!-- Sidebar -->
     <aside class="sidebar">
-        <div class="logo"><img id="logoImg" src="ModernTech_Solutions_Logo.png" alt=""></div>
-        
+        <div class="logo toggle-btn"><img id="logoImg" src="ModernTech_Solutions_Logo.png" alt="" onclick="State()"></div>
+         
         <nav>
-            <a href="employee.html" data-icon="📃">Dashboard</a>
-            <a href="attendance.html" data-icon="👥">Attendance</a>
-            <a href="payroll.html" data-icon="💵"> Payroll</a>
-            <a href="timeoff.html" class="active" data-icon="🕑"> Time Off</a>
-            <a href="profile.html" data-icon="👤">Profile</a>
+            <a href="employee.html" >📃 Dashboard</a>
+            <a href="attendance.html">👥Attendance</a>
+            <a href="payroll.html">💵 Payroll</a>
+            <a href="timeoff.html">🕑 Time Off</a>
+            <a href="profile.html">👤 Profile</a>
         </nav>
     </aside>
 
   <!-- Main -->
   <main class="content">
-    <header class="topbar">
-      <div>
-      <button id="state" onclick="State()"><span id="icon">🌗</span></button>
-      <input id="searchProfile" type="text" class="search" placeholder="Filter names..." />
-      </div>
-      <div class="profile">Overview</div>
-    </header>
+      <header class="topbar">
+            <div class="top-controls">
+            <button id="state" onclick="State()">◀️</button>
+            <input type="text" id="searchProfile" class="search" placeholder="Search employee...">
+            <a href="attendance.html" id="state">🏛️</a>
+            </div>
+      </header>
 
       <div class="line"></div>
       <h2>Employee Profiles</h2>
@@ -110,9 +40,6 @@
     <div class="select-row">
       <label for="employeeSelect"><strong>Select employee:</strong></label>
       <select id="employeeSelect"></select>
-      <button id="openTimeoff" style="padding:8px 10px;border-radius:8px;border:1px solid #ddd;background:#fff;cursor:pointer;">
-        View Time Off Page
-      </button>
     </div>
 
     <div id="profileContainer">
