@@ -23,5 +23,5 @@ function loginUser(event) {
   }
 
   // Login success
-  window.location.href = "/ideas_loyiso-1/employee.html"; 
+  window.location.href = "/Management/employee.html"; 
 }
