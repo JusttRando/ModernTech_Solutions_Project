@@ -114,10 +114,31 @@ body {
 }
 
 .Footer {
-    text-align: center;
-    padding: 1.5rem;
-    background-color: rgb(0, 0, 0);
+    background: #1a1a1a;
     color: white;
-    margin-top: 2rem;
+    text-align: center;
+    padding: 20px 15px;
+    margin-top: 40px;
 }
 
+.footer-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.footer-info {
+    font-size: 0.9rem;
+    color: #dcdcdc;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+.Footer-nav{
+    color: white;
+    background-color: #dcdcdc;
+}
+
+.Lets-Go {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
