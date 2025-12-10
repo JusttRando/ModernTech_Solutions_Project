@@ -2,20 +2,20 @@
 fetch("/Data/attendance.json")
     .then(res => res.json())
     .then(data => {
-        const container = document.getElementById("accordionContainer");
+        const container = document.getElementById("dropdownContainer");
 
         data.attendanceAndLeave.forEach(emp => {
 
             const item = document.createElement("div");
-            item.classList.add("accordion-item");
+            item.classList.add("dropdown-item");
 
         item.innerHTML = `
-            <div class="accordion-header">
+            <div class="dropdown-header">
                 <span>${emp.name}</span>
-                <span class="chevron">▶</span>
+                <span class="arrow">▶</span>
             </div>
 
-            <div class="accordion-body">
+            <div class="dropdown-body">
 
                 <div class="attendance-section">
                     <h3>Attendance</h3>
@@ -58,13 +58,13 @@ fetch("/Data/attendance.json")
         });
 
         // Add click expanding
-        document.querySelectorAll(".accordion-header").forEach(header => {
+        document.querySelectorAll(".dropdown-header").forEach(header => {
             header.addEventListener("click", () => {
                 const body = header.nextElementSibling;
-                const chevron = header.querySelector(".chevron");
+                const arrow = header.querySelector(".arrow");
 
                 body.style.display = body.style.display === "block" ? "none" : "block";
-                chevron.classList.toggle("rotate");
+                arrow.classList.toggle("arrowrotate");
             });
         });
     });
@@ -73,10 +73,10 @@ fetch("/Data/attendance.json")
 // Search for employees
 document.getElementById("searchAttendance").addEventListener("keyup", function () {
     const filter = this.value.toLowerCase();
-    const items = document.querySelectorAll(".accordion-item");
+    const items = document.querySelectorAll(".dropdown-item");
 
     items.forEach(item => {
-        const name = item.querySelector(".accordion-header span").innerText.toLowerCase();
+        const name = item.querySelector(".dropdown-header span").innerText.toLowerCase();
         item.style.display = name.includes(filter) ? "" : "none";
     });
 });
