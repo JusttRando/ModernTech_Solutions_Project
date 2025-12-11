@@ -17,6 +17,11 @@ body
     border: 1px solid rgb(139, 138, 138);
 }
 
+.layout 
+{
+    display: flex;
+}
+
 /* Sidebar Layout :) it hovers over everything else*/
 
 .sidebar 
@@ -107,10 +112,10 @@ body
 #state
 {
     padding: 10px;
-    background-color: cornflowerblue;
+    background-color: #2763ff;
     border: 1px solid #ddd;
-    border-radius: 6px; 
     text-decoration: none;
+    border-radius: 6px; 
     transition: all 0.5s ease-in-out;   
 }
 
@@ -124,7 +129,7 @@ body
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    padding: 20px 0;
 }
 
 /* Table Styles */  
@@ -329,7 +334,6 @@ body
     }
 }
 
-
 .select-row 
 {
     display:flex;
@@ -351,10 +355,8 @@ body
      /* Mobile Styling  */
 /* --------------------------- */
 
-@media (max-width: 900px) {
-
- 
-
+@media (max-width: 900px)
+{
     .sidebar 
     {
         position: fixed;
@@ -371,6 +373,165 @@ body
         transform: translateX(-100%);
     }
 
+}
+
+/* Profile Card Mobile Adjustments */
+
+@media (max-width: 600px) {
+
+    .content 
+    {
+        height: calc(140vh - 120px);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .table-wrapper 
+    {
+        flex: 1;
+        overflow-y: auto;
+        overflow-x: auto;
+        max-height: 60vh;
+    }
+
+    .table-wrapper table 
+    {
+    width: 100%;
+    table-layout: auto;
+    }
+
+    
+    .profile-card 
+    {
+        flex-direction: column;      /* Stack avatar + info vertically */
+        text-align: center;          /* Center all text */
+        align-items: center;         /* Center items */
+    }
+    
+    .profile-card .stat {
+        width: 100%;
+    }
+
+    .table-wrapper table th,
+    .table-wrapper table td {
+        padding: 4px 6px;
+        font-size: 12px;
+    }
+
+    /* Shrink action button */
+    .table-wrapper table button {
+        padding: 4px 6px !important;
+        font-size: 11px !important;
+        border-radius: 4px !important;
+    }
+
+    /* Reduce header spacing */
+    h2 {
+        margin: 8px 0 12px 0;
+        font-size: 18px;
+    }
+
+    /* Compact search & topbar */
+    .topbar .top-controls {
+        gap: 6px;
+        max-width: 100%;
+    }
+
+    .search {
+        padding: 7px;
+        font-size: 13px;
+    }
+
+    #state {
+        padding: 7px 10px;
+        font-size: 13px;
+    }
+
+    /* Payslip modal more compact */
+    #payslipModal > div {
+        width: 260px !important;
+        padding: 14px !important;
+    }
+
+    #payslipModal h2 {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    #payslipContent p {
+        margin: 4px 0;
+        font-size: 12px;
+    }
+
+    #payslipModal button {
+        padding: 6px 10px !important;
+        font-size: 12px !important;
+        border-radius: 5px;
+    }
+
+    /* Form container smaller */
+    #timeOffForm {
+        max-width: 100%;
+        grid-template-columns: 1fr; /* single column on mobile */
+        gap: 10px;
+    }
+
+    #timeOffForm label {
+        font-size: 14px;
+    }
+
+    #timeOffForm input,
+    #timeOffForm select {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .submit-btn {
+        padding: 10px;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    /* Make table compact */
+    #requestsTable td,
+    #requestsTable th {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+
+    .table-wrapper {
+        padding: 12px;
+        border-radius: 8px;
+    }
+
+    /* Compact search bar */
+    #searchRequests {
+        padding: 7px;
+        font-size: 13px;
+    }
+
+    /* Top bar compact */
+    .topbar .top-controls {
+        max-width: 100%;
+        gap: 6px;
+    }
+
+    /* Compact buttons */
+    #state {
+        padding: 7px 10px;
+        font-size: 13px;
+    }
+
+    /* Make table horizontally scrollable on small screens */
+    .table-wrapper {
+        overflow-x: auto;
+    }
+
+    /* Prevent columns from squashing */
+    #requestsTable {
+        min-width: 500px;
+    }
 }
 
 /* Footer Styles */
@@ -403,6 +564,5 @@ body
         background-color: #dcdcdc;
     }
 }
-
 
 

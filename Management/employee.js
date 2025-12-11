@@ -1,7 +1,7 @@
 // Load the employee JSON file
 fetch("/Data/employee_info.json")
     .then(response => response.json())
-    .then(data => {
+    .then(data => { 
         const table = document.getElementById("employeeTable");
 
         data.employeeInformation.forEach(emp => {
