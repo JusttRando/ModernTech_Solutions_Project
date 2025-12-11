@@ -1,3 +1,4 @@
+/*image in the tab*/
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
 
 * {
@@ -125,7 +126,7 @@ body {
     margin-bottom: 1rem;
     color: cornflowerblue;
 }
-
+/* Footer */
 .Footer {
     background: cornflowerblue;
     color: white;
@@ -159,23 +160,21 @@ body {
 
 #About {
 
-  transform: translateY(-100px); /* Start slightly above its final position */
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Smooth transition */
+  transform: translateY(-100px); 
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out; /*transition */
 }
 
 /* State when the animation is active */
 #About.slide-in {
   opacity: 71;
-  transform: translateY(0); /* Slide down to its final position */
+  transform: translateY(0); 
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* ===========================
-   MOBILE RESPONSIVE DESIGN
-   =========================== */
+/* Mobile version */
 @media (max-width: 768px) {
 
     /* Header */

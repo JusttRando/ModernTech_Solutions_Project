@@ -5,7 +5,7 @@ function loginUser(event) {
   let pass = document.getElementById("password").value.trim();
   let error = document.getElementById("errorMsg");
 
-  error.textContent = ""; // Clear previous errors
+  error.textContent = ""; 
 
   if (user === "" || pass === "") {
     error.textContent = "Please fill in all fields.";
