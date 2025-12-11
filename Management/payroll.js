@@ -1,4 +1,6 @@
-// Load employee info AND payroll data
+//payroll.js
+
+// Load employee info AnD payroll data
 Promise.all([
     fetch("/Data/employee_info.json").then(res => res.json()),
     fetch("/Data/payroll_data.json").then(res => res.json())
@@ -9,17 +11,16 @@ Promise.all([
     const payrollTable = document.getElementById("payrollTable");
 
     // Assume an hourly rate calculation
-    const HOURLY_RATE = 450; // you can adjust this value
+    const HOURLY_RATE = 450;
 
     payroll.forEach(p => {
         const emp = employees.find(e => e.employeeId === p.employeeId);
 
-        // Automated salary calculation
+        // Automated salary calculation number goes down :(
         const gross = p.hoursWorked * HOURLY_RATE;
         const leavePenalty = p.leaveDeductions * HOURLY_RATE;
         const finalSalary = gross - leavePenalty;
 
-        // Add row
         payrollTable.innerHTML += `
             <tr>
                 <td>${emp.name}</td>
@@ -38,7 +39,7 @@ Promise.all([
 });
 
 
-// --- Payslip Generator ---
+// --- Payslip Generator (its also printable) ---
 window.generatePayslip = function(name, position, hours, deductions, rate, finalSalary) {
 
     const gross = hours * rate;

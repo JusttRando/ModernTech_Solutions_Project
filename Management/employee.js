@@ -1,3 +1,5 @@
+//employee.js
+
 // Load the employee JSON file
 fetch("/Data/employee_info.json")
     .then(response => response.json())
@@ -18,7 +20,7 @@ fetch("/Data/employee_info.json")
         });
     });
 
-// Search filter
+// Search filter for employee table
 document.getElementById("search").addEventListener("keyup", function () {
     const value = this.value.toLowerCase();
     const rows = document.querySelectorAll("#employeeTable tr");
@@ -28,7 +30,7 @@ document.getElementById("search").addEventListener("keyup", function () {
     });
 });
 
-// Sidenav Slide
+// Sidenav Slllllide    
 function State() {
     const sidebar = document.querySelector(".sidebar");
     sidebar.classList.toggle("hidden");

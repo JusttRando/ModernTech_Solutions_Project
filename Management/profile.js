@@ -56,7 +56,7 @@ Promise.all([
     const stored = JSON.parse(localStorage.getItem("timeOffRequests") || "[]");
     const myLocalRequests = stored.filter(r => r.name === emp.name);
 
-    // Build HTML
+    // Build HTML with templates
     container.innerHTML = `
       <div class="profile-card">
         <div class="avatar" title="${emp.name}"> ${emojiFor(emp.name)} </div>
@@ -110,9 +110,8 @@ Promise.all([
     `;
   }
 
-  // helper: simple emoji generator from name (keeps it fun)
+  // simple emoji generator from name (keeps it fun)
   function emojiFor(name) {
-    // pick an emoji based on hash of name
     const pool = ["🧑‍💻","👩‍💼","🧑‍🔬","👨‍💼","🧑‍🎨","🧑‍🔧","👩‍🔧","👩‍🍳","🧑‍💼","👨‍🏫","👩‍💻"];
     let h = 0;
     for (let i=0;i<name.length;i++) h = (h*31 + name.charCodeAt(i)) >>> 0;
@@ -134,7 +133,6 @@ Promise.all([
     container.innerHTML = "<p>No employees found.</p>";
   }
 
-  // change handler
   select.addEventListener("change", () => {
     renderProfile(select.value);
   });
@@ -142,11 +140,11 @@ Promise.all([
   // search filter quick-wire (filters dropdown)
   document.getElementById("searchProfile").addEventListener("keyup", function () {
     const val = this.value.toLowerCase();
-    // filter select options
+
     Array.from(select.options).forEach(opt => {
       opt.hidden = !opt.text.toLowerCase().includes(val);
     });
-    // if current becomes hidden, pick first visible
+
     if (select.selectedOptions[0] && select.selectedOptions[0].hidden) {
       const firstVisible = Array.from(select.options).find(o => !o.hidden);
       if (firstVisible) select.value = firstVisible.value;
