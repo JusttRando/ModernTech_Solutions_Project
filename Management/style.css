@@ -107,15 +107,24 @@ body
 #state
 {
     padding: 10px;
-    background-color: #2763ff;
+    background-color: cornflowerblue;
     border: 1px solid #ddd;
     border-radius: 6px; 
+    text-decoration: none;
     transition: all 0.5s ease-in-out;   
 }
 
 #state:hover
 {
     background-color: rgb(114, 114, 114);
+}
+
+.header-section
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 /* Table Styles */  

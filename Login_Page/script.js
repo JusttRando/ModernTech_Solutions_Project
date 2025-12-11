@@ -17,7 +17,7 @@ function loginUser(event) {
     return;
   }
 
-  if (pass !== "12345") {
+  if (pass !== "tech2025") {
     error.textContent = "Incorrect password.";
     return;
   }
