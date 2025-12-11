@@ -3,9 +3,9 @@
 // Shows emoji avatar, contact, position, department, hoursWorked, leaveDeductions and all leave/timeoff requests.
 
 Promise.all([
-  fetch("/Data/employee_info.json").then(r => r.json()),       // employee info (uploaded). :contentReference[oaicite:2]{index=2}
-  fetch("/Data/payroll_data.json").then(r => r.json()),        // payroll data (provided by you)
-  fetch("/Data/attendance.json").then(r => r.json())          // attendance & leave (uploaded). :contentReference[oaicite:3]{index=3}
+  fetch("/Data/employee_info.json").then(r => r.json()),
+  fetch("/Data/payroll_data.json").then(r => r.json()),     
+  fetch("/Data/attendance.json").then(r => r.json())         
 ]).then(([empData, payrollData, attendanceData]) => {
 
   const employees = empData.employeeInformation || [];
